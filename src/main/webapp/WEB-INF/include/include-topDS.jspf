@@ -1,0 +1,46 @@
+<%@ page pageEncoding="utf-8"%>
+<div id="headerlink"><img id="goMain" src="<c:if test="${not empty sessionScope.userLoginInfo.cbapLogoUrl}">${sessionScope.userLoginInfo.cbapLogoUrl}</c:if><c:if test="${empty sessionScope.userLoginInfo.cbapLogoUrl}"><c:url value='/images/toplogo1.png' /></c:if>" width="auto" height="33" />
+<label id="goSubMain" class="goSubMain"><c:if test="${not empty sessionScope.userLoginInfo.cbapTit}">${sessionScope.userLoginInfo.cbapTit}</c:if><c:if test="${empty sessionScope.userLoginInfo.cbapTit}">C-BAP (Collection for BAP)</c:if></label>
+<c:if test="${not empty sessionScope.userLoginInfo.userId}">
+<table class="gomain"><tr>
+<td>
+${sessionScope.userLoginInfo.userNm}&nbsp;님 반갑습니다.
+</td><td id="goLogout">로그아웃</span></td>
+</tr></table>
+</c:if>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#goMain").on("click", function(e){
+            e.preventDefault();
+            fn_goMain();
+        });
+        $("#goSubMain").on("click", function(e){
+            e.preventDefault();
+            fn_goSubMain();
+        });
+        $("#goLogout").on("click", function(e){
+            e.preventDefault();
+            fn_goLogout();
+        });
+    });
+     
+    function fn_goMain(){
+        var comSubmit = new ComSubmit();
+        comSubmit.setUrl("<c:url value='/datasearch/openMain.do' />");
+        comSubmit.submit();
+    }
+    
+    function fn_goSubMain(){
+        var comSubmit = new ComSubmit();
+        //comSubmit.setUrl("<c:url value='/datasearch/openDataSearch.do' />");
+        comSubmit.setUrl("<c:url value='/datasearch/goPage.do?PAGE=/ds/dsStep01&MENULINK=openDsStep01' />");
+        comSubmit.submit();
+    }
+    
+    function fn_goLogout(){
+        var comSubmit = new ComSubmit();
+        comSubmit.setUrl("<c:url value='/datasearch/logout.do' />");
+        comSubmit.submit();
+    }
+</script>

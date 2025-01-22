@@ -1,0 +1,45 @@
+<%@ page pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>  
+
+<%-- <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui" %> --%>
+<title><c:if test="${not empty sessionScope.userLoginInfo.siteTit}">${sessionScope.userLoginInfo.siteTit}</c:if><c:if test="${empty sessionScope.userLoginInfo.siteTit}">INIT-BAPS</c:if></title> 
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=0.25, width=device-width" />
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<link rel="apple-touch-icon" href="<c:url value='/images/initfavicon.png'/>"/>
+<link rel="shortcut Icon" href="<c:url value='/images/initfavicon.ico'/>"/>
+ 
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/base.css'/>" />
+
+<!-- jQuery -->
+<script src="<c:url value='/css/jquery-ui-1.12.0.custom/jquery.js'/>"></script>
+<%-- <script src="<c:url value='/jqGrid/js/jquery.js'/>"></script> --%>
+<%-- <script src="<c:url value='/jqGrid/js/jquery-ui-custom.min.js'/>"></script> --%>
+
+<!-- jQuery-UI -->
+<link href="<c:url value='/css/jquery-ui-1.12.0.custom/Smoothness/jquery-ui-custom.css'/>" rel="stylesheet">
+<script src="<c:url value='/css/jquery-ui-1.12.0.custom/Smoothness/jquery-ui.js'/>"></script>
+ 
+<!-- jgGrid -->
+<link href="<c:url value='/jqGrid/css/ui.jqgrid.css'/>" rel="stylesheet">
+<%-- <script src="<c:url value='/jqGrid/js/jquery.layout.js'/>"></script> --%>
+<script src="<c:url value='/jqGrid/js/jquery.jqGrid.js'/>"></script>
+<script src="<c:url value='/jqGrid/js/jquery.tablednd.js'/>"></script>
+<%-- <script src="<c:url value='/jqGrid/js/i18n/grid.locale-kr.js'/>"></script> --%>
+
+<!-- javascript -->
+<script src="<c:url value='/js/common.js'/>" charset="utf-8"></script>
+
+<script type="text/javascript">
+	$.jgrid.no_legacy_api = true;
+	$.jgrid.useJSON = true;
+	
+	var g_usrId = '${sessionScope.userLoginInfo.userId}';
+</script>
+
+<%-- <script src="<c:url value='/jqGrid/js/common.js'/>" charset="utf-8"></script> --%>

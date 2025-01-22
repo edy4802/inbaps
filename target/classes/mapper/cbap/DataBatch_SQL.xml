@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="databatch">
+
+    <select id="selectLogin" parameterType="hashmap" resultType="hashmap">
+<![CDATA[
+select decode(count(*),1,'Y','N') as login_yn
+     , max(role_grp) as role_grp
+     , max(usr_id) as usr_id
+     , max(usr_as) as usr_as
+     , max(usr_nm) as usr_nm
+     , max(site_url) as site_url
+     , max(site_tit) as site_tit
+     , max(main_logo_url) as main_logo_url
+     , max(main_tit) as main_tit
+     , max(cbap_logo_url) as cbap_logo_url
+     , max(cbap_tit) as cbap_tit
+     , max(rbap_logo_url) as rbap_logo_url
+     , max(rbap_tit) as rbap_tit
+     , max(vbap_logo_url) as vbap_logo_url
+     , max(vbap_tit) as vbap_tit
+  from cbap$_usr
+ where upper(usr_id) = upper(#{USR_ID})
+   and usr_pw = #{USR_PW}
+]]> 
+    </select>
+    
+	<update id="insertDsProjectInfo" parameterType="hashmap">
+<![CDATA[
+insert into cbap$_prj (usr_id, proj_id, proj_nm, proj_desc, colect_typ_cd, disp_ord) 
+select #{USR_ID} as usr_id
+     , (select 'P' || lpad(nvl(substr(max(proj_id),2)+1,1),5,'0') from cbap$_prj where usr_id = #{USR_ID}) as proj_id
+     , #{PROJ_NM} as proj_nm
+     , #{PROJ_DESC} as proj_desc
+     , #{COLECT_TYP_CD} as colect_typ_cd
+     , #{DISP_ORD} as disp_ord
+  from dual
+]]>
+	</update> 
+	
+	<update id="deleteDsProjectInfo" parameterType="hashmap">
+<![CDATA[
+delete from cbap$_prj where usr_id = #{USR_ID} and proj_id = #{PROJ_ID}
+]]>
+	</update> 
+    
+	<update id="updateDsProjectInfo" parameterType="hashmap">
+<![CDATA[
+update cbap$_prj
+   set proj_nm = #{PROJ_NM}
+     , proj_desc = #{PROJ_DESC}
+     , colect_typ_cd = #{COLECT_TYP_CD}
+     , disp_ord = #{DISP_ORD}
+ where usr_id = #{USR_ID}
+   and proj_id = #{PROJ_ID}
+]]>
+	</update>
+	
+</mapper>

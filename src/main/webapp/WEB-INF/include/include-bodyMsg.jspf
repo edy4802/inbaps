@@ -1,0 +1,84 @@
+<%@ page pageEncoding="utf-8"%>
+<div id="divInfoMsg" title="Message"></div>
+<div id="divErrMsg" title="Error"></div>
+<div id="divConfirm" title="Confirm"></div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+        $( "#divInfoMsg" ).dialog({
+        	autoOpen: false,
+        	modal: true,
+        	width: 400,
+        	buttons: [
+        		{
+        			text: "Ok",
+        			click: function() {
+        				$( this ).dialog( "close" );
+        				if(fv_alertCallback == null|| gfn_isNull(fv_alertCallback)){return;}
+        				if(typeof(fv_alertCallback) == "function"){
+        					fv_alertCallback();
+                        }
+                        else {
+                            eval(fv_alertCallback + "();");
+                        }
+        			}
+        		}
+        	]
+        });
+        
+        $( "#divErrMsg" ).dialog({
+        	autoOpen: false,
+        	modal: true,
+        	width: 500,
+        	buttons: [
+        		{
+        			text: "Ok",
+        			click: function() {
+        				$( this ).dialog( "close" );
+        				if(fv_alertCallback == null|| gfn_isNull(fv_alertCallback)){return;}
+        				if(typeof(fv_alertCallback) == "function"){
+        					fv_alertCallback();
+                        }
+                        else {
+                            eval(fv_alertCallback + "();");
+                        }
+        			}
+        		}
+        	]
+        });
+        
+		/*** Confirm Source Poupup ***/
+		$( "#divConfirm" ).dialog({
+			autoOpen: false,
+			modal: true,
+			width: 400,
+			buttons: [
+				{
+					text: "Ok",
+					click: function() {
+						$( this ).dialog( "close" );
+						if(fv_alertCallback == null|| gfn_isNull(fv_alertCallback)){return;}
+        				if(typeof(fv_alertCallback) == "function"){
+        					fv_alertCallback();
+                        }
+                        else {
+                            eval(fv_alertCallback + "();");
+                        }
+						//fn_deleteSrcInfo();
+						//fn_deleteTgtInfo();
+					}
+				},
+				{
+					text: "Cancel",
+					click: function() {
+						$( this ).dialog( "close" );
+					}
+				}
+			]
+		});        
+        
+        $( "#divInfoMsg" ).dialog( "close" );
+        $( "#divErrMsg" ).dialog( "close" );
+		$( "#divConfirm" ).dialog( "close" );
+    });
+</script>

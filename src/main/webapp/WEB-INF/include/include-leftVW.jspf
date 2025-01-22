@@ -1,0 +1,43 @@
+<%@ page pageEncoding="utf-8"%>
+<div id="leftMenu">
+	<div id="goMenu">
+		<ul class="leftMenu">
+			<li id="m01" class="<c:choose><c:when test="${menulink eq 'openVwStep01'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">시작하기</li>
+			<li id="m02" class="<c:choose><c:when test="${menulink eq 'openVwStep02'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">둘러보기</li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#m01").on("click", function(e){
+            e.preventDefault();
+            fn_goMenu('01');
+        });
+        $("#m02").on("click", function(e){
+            e.preventDefault();
+            fn_goMenu('02');
+        });
+        $("#m03").on("click", function(e){
+            e.preventDefault();
+            fn_goMenu('03');
+        });
+        $("#m04").on("click", function(e){
+            e.preventDefault();
+            fn_goMenu('04');
+        });
+        $("#m05").on("click", function(e){
+            e.preventDefault();
+            fn_goMenu('05');
+        });
+        $("#m06").on("click", function(e){
+            e.preventDefault();
+            fn_goMenu('06');
+        });
+    });
+     
+    function fn_goMenu(idx){
+        var comSubmit = new ComSubmit();
+        comSubmit.setUrl("<c:url value='/visual/openVwStep" + idx + ".do' />");
+        comSubmit.submit();
+    }
+</script>

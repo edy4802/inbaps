@@ -1,0 +1,1784 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+html, body { padding: 0 !important; margin: 0 !important; min-height: 100%; height: 100%;width:100%; }
+body {
+	font-family: "Nanum Gothic", sans-serif, 'Droid Sans', 'Open Sans', Calibri, Courier, monospace;
+	margin: 0;
+	padding: 0;
+	margin: auto;
+	color: #222;
+	background: #ccc;
+	background: #ddd;
+	background-attachment:fixed;
+	line-height: 1.4;
+
+	font-size: 62.5%;
+
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	overflow:auto !important;    
+}
+dl, ul, ol, menu, li {
+    list-style: none;
+}
+
+#content {
+	overflow:hidden !important;    
+	min-height: 100%; 
+	height: auto;
+    padding-bottom: 0px;
+    margin-left: 240px;    
+}
+
+#body {
+	/*position:fixed;*/
+    margin-top: 70px; 
+    /*
+    background-color: #fff;
+    */
+}
+
+#headerlink {
+	/*position: fixed;*/
+	top: 0; left: 0; right: 0; bottom:0;
+	color:#ddd;
+	font-size:2.5em;
+	height: 33px;
+	padding: 10px 20px;
+	background-color: #999999;/*#373535;*/
+	border-bottom: 1px solid #454545;
+}
+
+#headerlink .gomain {
+	/*height: 33px;*/
+	/*line-height: 33px;*/
+	padding: 8px 8px;
+	/*border-radius: 4px;*/
+	color: #eee;
+	text-decoration: none;
+	font-size: 60%;
+	display: block;
+	float: right;
+}
+
+#headerlink .goSubMain {
+	vertical-align: top;
+}
+
+#header .gomain:hover {
+	opacity: 0.95;
+	color: #fff;
+}
+
+#header {
+	text-align: center;
+	/*
+	position: fixed;
+	position: absolute;
+	*/
+	margin: auto;
+	left: 0; right: 0;
+	/*z-index: 123456789;*/
+	/*width: 460px;*/
+	text-align: center;
+
+	margin: auto;
+}
+
+#leftMenu {
+/*    left: 0;
+    top: 54px;*/
+    z-index: 10;
+    width: 220px;
+    padding-left: 0px;
+    min-height: 100%;
+    background-color: #fff;
+    display: block;
+    float: left;
+}
+
+#goMenu {
+/*	position: fixed; */
+    top: 100px;
+
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: -1px;
+    color: #373535;
+    text-decoration: none;    
+    background-position: 0 -100px;
+    
+}
+
+.leftMenu li{padding:20px 0 0 5px}
+
+.leftMenu .mline{
+	border-bottom: 1px solid #454545;
+}
+
+.leftMenu .mclick{
+	cursor:pointer;
+}
+.leftMenu .mclick:hover{
+	color:orange;
+}
+
+.leftMenu .mclickActive{
+	cursor:pointer;
+	color:orange;
+}
+.leftMenu .mclickActive:hover{
+	color:orange;
+}
+
+
+h1 {
+	margin: auto;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	/*padding: 80px 0 40px;*/
+	text-transform: uppercase;
+	font-size: 4.0em;
+}
+
+#logo {
+	/*width: 196px;*/
+	height: 196px;
+	margin: 60px auto;
+	background: transparent url('../images/logo.svg') center center no-repeat;
+	background-size: 100%;
+
+	background-size: 100px;
+	background-position: center left;
+	margin: 20px auto 60px;
+	/*width: 400px;*/
+	display: inline-block;
+	padding-left: 120px;
+	line-height: 196px;
+}
+
+
+
+#examples {
+	position: fixed;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	height: 12.5em;
+	margin: auto;
+	list-style: none;
+}
+#examples li {
+	font-size: 1.3em;
+	cursor: pointer;
+	line-height: 1.3em;
+	/*padding: 0px 0 15px;*/
+	padding: 0 0 1.2em;
+
+	text-align: right;
+	color: #666;
+	font-weight: bold;
+	z-index: 123456789;
+}
+#examples li a {
+	color: #666;
+	text-decoration: none;
+}
+#examples a[data-selected="true"], #examples a:hover {
+	color: #cb6868;
+}
+
+#goMain{
+	cursor:pointer;
+}
+#goSubMain{
+	cursor:pointer;
+}
+#dsMain{
+	cursor:pointer;
+}
+#rtMain{
+	cursor:pointer;
+}
+#vwMain{
+	cursor:pointer;
+}
+
+.page {
+
+	min-height: 100%;
+
+	padding-top: 25%;
+	padding-bottom: 10%;
+
+	background: rgba(0,0,200,0.2);
+	
+	margin: auto;
+	text-align: center !important;
+
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#example-1 { background-color: #ddd; padding-top: 0% !important; background: #ddd url('../images/scroll2.svg') bottom 20px center no-repeat; background-size: 50px; }
+#example-2 { background-color: #2a282b; padding-top: 10% !important; }
+#example-3 { background-color: #efefef; padding-top: 10% !important; }
+#example-4 { background-color: #ddd; padding-top: 25%; }
+#example-5 { background-color: #2a282b; padding-top: 5% !important; min-height: 0% !important; padding-bottom: 5% !important; }
+
+#dropzone-0 {
+	display: inline-block;
+	padding: 80px;
+	margin-top: -80px;
+}
+
+#dropzone {
+	border: 4px dashed rgba(0,0,0, 0.2);
+	display: inline-block;
+	vertical-align: top;
+	margin: auto;
+	padding: 60px;
+	/*margin-top: -100px;*/
+}
+
+
+#example-5 h1 {
+	color: #ccc;
+	font-size: 2.4em;
+	margin-bottom: 40px;
+}
+
+#example-5 .browser-icon {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	max-height: 90px;
+	margin: 20px 20px 0;
+}
+
+#example-5 .browser-icon img {
+	max-width: 90px;
+	max-height: 90px;
+	display: block;
+	margin-bottom: 10px;
+}
+#example-5 .browser-icon span {
+	color: #ccc;
+	font-size: 1.6em;
+}
+#example-5 p {
+	display: block !important;
+	color: #666;
+
+	font-size: 1.4em;
+	margin: 30px auto 0 !important;
+	padding: 20px 0 0;
+}
+
+
+#dropzone-2 {
+	border: 4px dashed rgba(255,255,255, 0.5);
+	display: inline-block;
+	vertical-align: top;
+	margin: auto;
+	padding: 120px;
+	border-radius: 10px;
+	margin-top: -160px;
+}
+#example-4 p {
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #444;
+	
+	margin: 0 auto 30px;
+	max-width: 500px;
+}
+
+
+
+.demo-text {
+	font-size: 1.8em;
+	font-weight: bold;
+	margin: 0 auto 40px;
+	max-width: 600px;
+	color: rgb(84, 92, 106);
+	color: rgb(124, 132, 146);
+}
+.demo-text-dark {
+	font-size: 1.4em;
+	font-weight: bold;
+	margin: auto;
+	max-width: 600px;
+	color: #eee;
+}
+
+#parameters-table {
+	padding-top: 200px;
+	text-align: center;
+}
+
+.table-column {
+	/*max-width: 250px;*/
+	min-width:250px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px 20px 40px;
+}
+
+.table-column img {
+	/*max-width: 120px;*/
+	max-height: 120px;
+	display: block;
+	margin: 0 auto 20px;
+}
+
+
+.table-column h1 {
+	text-transform: uppercase;
+	font-size: 2.9em;
+	color: rgb(64, 72, 86);
+}
+
+.table-column div {
+	font-size: 1.6em;
+	font-size: 1.5em;
+	color: rgb(122, 131, 140);
+}
+
+
+
+
+
+/*############## Real Time Upload ###################################################################*/
+
+#example-1 .RTU-hiddenFile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+
+@keyframes unfoldGrow {
+	0% { height: 0; opacity: 0; }
+	40% { height: 55px; opacity: 0; }
+	41% { transform: scale(0.8); opacity: 1; }
+	95% { transform: scale(1.02); }
+	100% { transform: scale(1); }
+}
+
+#example-1 .RTU-uploadLabel {
+	display: inline-block;
+	vertical-align: middle;
+
+
+
+	background-color: #cb6868;
+	text-align: center;
+	margin: 0 auto;
+	color: #fefefe;
+	font-weight: bold;
+	font-size: 1.1em;
+
+	cursor: pointer;
+
+	height: 52px;
+	line-height: 52px;
+	border: 4px dashed #cb6868;
+	transition: 0.2s linear;
+
+
+	font-size: 1.3em;
+
+	padding: 0 36px;
+	min-width: 280px;
+
+	white-space: nowrap;
+}
+#example-1 .RTU-uploadLabel:hover {
+	background-color: #b94646;
+	border: 4px dashed #b94646;
+}
+
+#example-1 .RTU-uploadLabelActive {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+#example-1 .RTU-uploadLabel * {
+	pointer-events: none;
+}
+
+#example-1 .RTU-droppable {
+	border: 4px dashed #a94646;
+	transition: 0.2s linear;
+}
+#example-1 .RTU-droppable:hover {
+	background-color: #ed8a8a !important;
+	transition: 0.2s linear;	
+}
+
+#example-1 .RTU-uploadLabelImage {
+	display: inline-block;
+	vertical-align: middle;
+	width: 24px;
+	height: 24px;
+	background: transparent url('../images/upload-icon.svg') center center no-repeat;
+	background-size: 100%;
+	margin: 0 10px 0 0;
+}
+
+#example-1 .RTU-uploadLabelText {
+	display: inline-block;
+	vertical-align: middle;
+	color: #fefefe;
+}
+
+
+
+#example-1 .RTU-uploadButtonHolder {
+	min-width: 340px;
+	display: block;
+	text-align: right;
+
+	padding: 0 10px;
+
+	background: #efefef;
+
+	height: 0;
+	line-height: 30px;
+	overflow: hidden;
+
+	height: 30px;
+	padding: 10px;
+}
+
+#example-1 .RTU-uploadButton {
+	display: inline-block;
+
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 15px;
+	background: #ddd;
+	color: #555;
+	color: #555;
+	cursor: pointer;
+
+	font-size: 1.2em;
+	font-weight: bold;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#example-1 .RTU-uploadContainer .RTU-uploadItemsList[data-upload="0"] + .RTU-uploadButtonHolder,
+#example-1 .RTU-gridContainer .RTU-uploadItemsList[data-upload="0"] + .RTU-uploadButtonHolder {
+	height: 0px;
+	padding: 0px;
+}
+
+/*############## Real Time Upload: List Mode ###################################################################*/
+
+#example-1 .RTU-uploadContainer {
+	min-height: 60px;
+	min-width: 320px;
+	display: inline-block;
+}
+
+#example-1 .RTU-uploadContainer .RTU-uploadItemsList {
+	min-width: 320px;
+	text-align: left;
+}
+
+
+#example-1 .RTU-uploadContainer .RTU-uploadItem {
+	padding: 20px 20px;
+	background: rgba(255,255,255, 0.8);
+	margin: auto;
+	min-width: 320px;
+
+	font-size: 1.1em;
+	line-height: 1.2em;
+
+	position: relative;
+
+	height: 55px;
+	animation: unfoldGrow 0.8s normal;
+}
+#example-1 .RTU-uploadContainer .RTU-uploadItemIcon {
+	display: block;
+	height: 40px;
+	width: 40px;
+	margin-right: 20px;
+
+	height: 50px;
+	width: 50px;
+	margin-right: 10px;
+
+	float: left;
+	text-align: center;
+
+	line-height: 40px;
+	color: #999;
+	font-size: 1.5em;
+	font-weight: bold;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#example-1 .RTU-uploadContainer .RTU-uploadItemText {
+	width: 260px;
+	display: inline-block;
+	vertical-align: top;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #444;
+	font-weight: bold;
+
+	margin-bottom: 5px;
+
+	font-size: 1.1em;
+	line-height: 1.2em;
+}
+
+#example-1 .RTU-uploadContainer .RTU-uploadItemControls {
+
+}
+
+#example-1 .RTU-uploadContainer .RTU-uploadItemSize {
+	
+	display: inline-block;
+	vertical-align: top;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #999;
+
+	font-size: 1.0em;
+	line-height: 20px;
+}
+
+#example-1 .RTU-uploadContainer .RTU-controlsContainer {
+	position: relative;
+	float: right;
+	display: inline-block;
+	vertical-align: top;
+	height: 20px;
+}
+
+#example-1 .RTU-uploadContainer .RTU-uploadItemPause {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	background: rgba(0,0,0,0.1) url('../images/pause.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 46%;
+
+	cursor: pointer;
+	margin-left: 7px;
+}
+#example-1 .RTU-uploadContainer .RTU-paused {
+	background: rgba(0,0,0,0.1) url('../images/start.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 46%;
+}
+#example-1 .RTU-uploadContainer .RTU-done {
+	display: none !important;
+}
+
+#example-1 .RTU-uploadContainer .RTU-uploadItemCancel {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+
+	background: rgba(0,0,0,0.1) url('../images/cancel.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 46%;
+	cursor: pointer;
+	margin-left: 7px;
+}
+
+#example-1 .RTU-uploadContainer .RTU-uploadItemView {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	float: right;
+	background: rgba(0,0,0,0.1) url('../images/view.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 64%;
+	cursor: pointer;
+	margin-left: 7px;
+}
+
+#example-1 .RTU-uploadContainer .RTU-uploadItemBar {
+
+	height: 4px;
+	display: block;
+	background: rgba(0,0,0, 0.1);
+	margin: 20px 0 10px;
+	overflow: hidden;
+
+
+	height: 4px;
+	background: #e6e6e6;
+
+	width: 100%;
+}
+
+#example-1 .RTU-uploadContainer .RTU-uploadItemBarUploaded {
+	width: 0;
+	height: 100%;
+	background: rgba(40,40,80, 0.6);
+	transition: 0.2s linear;
+
+
+	height: 100%;
+	background: #a2d39c;
+}
+#example-1 .RTU-uploadContainer .RTU-uploadItemBarFailed {
+	background: rgba(200,40,80, 0.6) !important;
+	width: 100% !important;
+}
+#example-1 .RTU-uploadContainer .RTU-uploadItemBarSucceed {
+	background: rgba(40,200,80, 0.6) !important;
+	width: 100% !important;
+}
+
+/*############## Real Time Upload: List Mode /end ##############################################################*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#example-2 .RTU-hiddenFile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+
+@keyframes unfoldGrow {
+	0% { height: 0; opacity: 0; }
+	40% { height: 55px; opacity: 0; }
+	41% { transform: scale(0.8); opacity: 1; }
+	95% { transform: scale(1.02); }
+	100% { transform: scale(1); }
+}
+
+#example-2 .RTU-uploadLabel {
+	display: inline-block;
+	vertical-align: middle;
+
+
+
+	/*background-color: #fefefe;*/
+	text-align: center;
+	margin: 0 auto;
+	color: #757a89;
+	font-weight: bold;
+	font-size: 1.1em;
+
+	cursor: pointer;
+	/*
+	height: 52px;
+	line-height: 52px;
+	*/
+	/*border: 4px dashed #fefefe;*/
+	transition: 0.2s linear;
+
+	/*margin-bottom: 10px;*/
+
+	font-size: 1.3em;
+
+	padding: 0 36px;
+	min-width: 280px;
+
+	white-space: nowrap;
+}
+#example-2 .RTU-uploadLabel:hover {
+	/*background-color: #efefef;*/
+	/*border: 4px dashed #efefef;*/
+}
+
+#example-2 .RTU-uploadLabelActive {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+#example-2 .RTU-uploadLabel * {
+	pointer-events: none;
+}
+
+#example-2 .RTU-droppable {
+	/*border: 4px dashed #afafaf;*/
+	transition: 0.2s linear;
+}
+#example-2 .RTU-droppable:hover {
+	/*background-color: #ed8a8a !important;*/
+	transition: 0.2s linear;	
+}
+
+#example-2 .RTU-uploadLabelImage {
+
+	vertical-align: middle;
+	/*
+	width: 24px;
+	height: 24px;
+	*/
+	/*background: transparent url('../images/upload-icon.dark.png') center center no-repeat;*/
+	background: transparent url('../images/upload-icon.dark.svg') center center no-repeat;
+	/*
+	background-size: 100%;
+	margin: 0 10px 0 0;
+	*/
+
+	width: 48px;
+	height: 48px;
+	margin: 0px auto 20px;
+	background-size: 48px;
+}
+
+#example-2 .RTU-uploadLabelText {
+	display: inline-block;
+	vertical-align: middle;
+	color: #757a89;
+	color: #999;
+}
+
+
+
+#example-2 .RTU-uploadButtonHolder {
+	min-width: 340px;
+	display: block;
+	text-align: right;
+	/*padding: 10px;*/
+	padding: 0 10px;
+
+	background: #efefef;
+
+	height: 0;
+	line-height: 30px;
+	overflow: hidden;
+}
+
+#example-2 .RTU-uploadButton {
+	display: inline-block;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 15px;
+
+	color: #555;
+	color: #777;
+	cursor: pointer;
+
+	font-size: 1.2em;
+	font-weight: bold;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#example-2 .RTU-uploadContainer .RTU-uploadItemsList:not([data-upload="0"]) + .RTU-uploadButtonHolder,
+#example-2 .RTU-gridContainer .RTU-uploadItemsList:not([data-upload="0"]) + .RTU-uploadButtonHolder {
+	height: 30px !important;
+	padding: 10px;
+}
+
+/*############## Real Time Upload: Grid Mode ###################################################################*/
+
+#example-2 .RTU-gridContainer {
+	/*width: 360px;*/
+	min-height: 60px;
+	min-width: 320px;
+	display: inline-block;
+}
+
+
+#example-2 .RTU-gridContainer .RTU-uploadItemsList {
+	min-width: 320px;
+	text-align: center;
+	/*background: #fefefe;*/
+	/*padding: 40px 0;*/
+}
+#example-2 .RTU-gridContainer .RTU-uploadItemsList:not([data-upload="0"]) {
+	padding: 20px 0;
+}
+
+#example-2 .RTU-gridContainer .RTU-uploadItem {
+	/*min-height: 40px;*/
+	padding: 20px 20px;
+	/*background: rgba(255,255,255, 0.8);*/
+	margin: auto;
+	width: 320px;
+
+	font-size: 1.1em;
+	line-height: 1.2em;
+
+	display: inline-block;
+	vertical-align: top;
+	width: 96px;
+	padding: 10px;
+
+	/*margin-bottom: 10px;*/
+
+	position: relative;
+	animation: unfoldGrow 0.8s normal;
+}
+#example-2 .RTU-gridContainer .RTU-uploadItemIcon {
+	display: block;
+	height: 96px;
+	width: 96px;
+	
+	
+
+	text-align: center;
+
+	line-height: 120px;
+	line-height: 100px;
+	color: #999;
+	font-size: 2.5em;
+	font-weight: bold;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	margin-bottom: 10px;
+}
+
+
+#example-2 .RTU-gridContainer .RTU-uploadItemText {
+	width: 120px;
+	display: inline-block;
+	vertical-align: top;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #444;
+	font-weight: bold;
+
+	margin-bottom: 5px;
+
+	font-size: 1.1em;
+	line-height: 1.2em;
+	display: none;
+}
+#example-2 .RTU-gridContainer .RTU-uploadItemSize {
+	
+	display: inline-block;
+	vertical-align: middle;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #999;
+
+	margin-bottom: 5px;
+
+	font-size: 1.0em;
+	line-height: 20px;
+	display: none;
+}
+
+#example-2 .RTU-gridContainer .RTU-controlsContainer {
+
+}
+
+#example-2 .RTU-gridContainer .RTU-uploadItemPause {
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 26px;
+	background: rgba(220,220,220, 0.6) url('../images/pause.svg') center center no-repeat;
+	background-size: 46%;
+	float: right;
+	cursor: pointer;
+
+
+	position: absolute;
+	top: 90px;
+	left: 20px;
+
+
+
+	position: absolute;
+	top: 10px;
+	left: 10px;
+
+	height: 96px;
+	width: 48px;
+	background-size: 32px;
+
+	opacity: 0;
+	transition: 0.2s linear;
+}
+
+#example-2 .RTU-gridContainer .RTU-paused {
+	background-image: url('../images/start.svg');
+}
+#example-2 .RTU-gridContainer .RTU-uploadItemPause:hover {
+	background-color: rgba(220,220,220, 1);
+}
+
+#example-2 .RTU-gridContainer .RTU-done {
+	display: none !important;
+}
+
+#example-2 .RTU-gridContainer .RTU-uploadItemCancel {
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 26px;
+	float: right;
+	background: rgba(220,220,220, 0.6) url('../images/cancel.svg') center center no-repeat;
+	background-size: 46%;
+	cursor: pointer;
+
+
+
+	position: absolute;
+	top: 90px;
+	left: 80px;
+
+	position: absolute;
+	top: 10px;
+	left: 58px;
+
+	height: 96px;
+	width: 48px;
+	background-size: 32px;
+
+	opacity: 0;
+	transition: 0.2s linear;
+}
+#example-2 .RTU-gridContainer .RTU-uploadItemCancel:hover {
+	background-color: rgba(220,220,220, 1);
+}
+
+#example-2 .RTU-gridContainer .RTU-done + .RTU-uploadItemCancel {
+	width: 96px !important;
+	top: 10px !important;
+	left: 10px !important;
+
+	opacity: 0.2;
+}
+
+#example-2 .RTU-gridContainer .RTU-uploadItem:hover .RTU-uploadItemPause,
+#example-2 .RTU-gridContainer .RTU-uploadItem:hover .RTU-uploadItemCancel {
+	opacity: 1;
+	transition: 0.2s linear;
+}
+
+#example-2 .RTU-gridContainer .RTU-uploadItemView {
+	position: absolute;
+
+	display: inline-block;
+	vertical-align: middle;
+
+	background: rgba(220,220,220, 0.6) url('../images/view.svg') center center no-repeat;
+
+	background-size: 32px;
+	cursor: pointer;
+
+	position: absolute;
+	top: 10px;
+	left: 10px;
+
+	height: 96px;
+	width: 96px;
+
+	opacity: 0;
+	transition: 0.2s linear;
+}
+#example-2 .RTU-gridContainer .RTU-uploadItemView:hover {
+	background-color: rgba(220,220,220, 0.6);
+	opacity: 1;
+	transition: 0.2s linear;
+}
+
+#example-2 .RTU-gridContainer .RTU-uploadItemBar {
+	width: 96px;
+	height: 4px;
+	/*display: inline-block;*/
+	background: rgba(0,0,0, 0.2);
+
+	overflow: hidden;
+	/*
+	border-radius: 4px;
+	*/
+
+
+	position: absolute;
+	top: 112px;
+	left: 10px;
+	height: 6px;
+	/*background: #e6e6e6;*/
+
+	border-radius: 6px;
+}
+
+#example-2 .RTU-gridContainer .RTU-uploadItemBarUploaded {
+	width: 0;
+	height: 100%;
+	background: rgba(200,200,200, 0.4);
+	transition: 0.2s linear;
+
+	/*
+	border-radius: 4px;
+	*/
+
+	/*background: #a2d39c;*/
+}
+#example-2 .RTU-gridContainer .RTU-uploadItemBarFailed {
+	background: rgba(200,40,80, 0.6) !important;
+	width: 100% !important;
+}
+#example-2 .RTU-gridContainer .RTU-uploadItemBarSucceed {
+	background: rgba(102,193,126, 1) !important;
+	width: 100% !important;
+}
+
+#example-2 .RTU-gridContainer .RTU-uploadButtonHolder {
+	background: transparent !important;
+}
+
+/*############## Real Time Upload: Grid Mode /end ##############################################################*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*############## Real Time Upload ###################################################################*/
+
+#example-4 .RTU-hiddenFile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+
+@keyframes unfoldGrow {
+	0% { height: 0; opacity: 0; }
+	40% { height: 55px; opacity: 0; }
+	41% { transform: scale(0.8); opacity: 1; }
+	95% { transform: scale(1.02); }
+	100% { transform: scale(1); }
+}
+
+#example-4 .RTU-uploadLabel {
+	display: inline-block;
+	vertical-align: middle;
+
+
+
+	background-color: #cb6868;
+	text-align: center;
+	margin: 0 auto;
+	color: #fefefe;
+	font-weight: bold;
+	font-size: 1.1em;
+
+	cursor: pointer;
+
+	height: 52px;
+	line-height: 52px;
+	border: 4px dashed #cb6868;
+	transition: 0.2s linear;
+
+	/*margin-bottom: 10px;*/
+
+	font-size: 1.3em;
+
+	padding: 0 36px;
+
+	min-width: 280px;
+	white-space: nowrap;
+}
+#example-4 .RTU-uploadLabel:hover {
+	background-color: #b94646;
+	border: 4px dashed #b94646;
+}
+
+#example-4 .RTU-uploadLabelActive {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+#example-4 .RTU-uploadLabel * {
+	pointer-events: none;
+}
+
+#example-4 .RTU-droppable {
+	border: 4px dashed #a94646;
+	transition: 0.2s linear;
+}
+#example-4 .RTU-droppable:hover {
+	background-color: #ed8a8a !important;
+	transition: 0.2s linear;	
+}
+
+#example-4 .RTU-uploadLabelImage {
+	display: inline-block;
+	vertical-align: middle;
+	width: 24px;
+	height: 24px;
+	background: transparent url('../images/upload-icon.svg') center center no-repeat;
+	background-size: 100%;
+	margin: 0 10px 0 0;
+}
+
+#example-4 .RTU-uploadLabelText {
+	display: inline-block;
+	vertical-align: middle;
+	color: #fefefe;
+}
+
+
+
+#example-4 .RTU-uploadButtonHolder {
+	min-width: 340px;
+	display: block;
+	text-align: right;
+	/*padding: 10px;*/
+	padding: 0 10px;
+
+	background: #efefef;
+
+	height: 0;
+	line-height: 30px;
+	overflow: hidden;
+}
+
+#example-4 .RTU-uploadButton {
+	display: inline-block;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 15px;
+	background: #ddd;
+	color: #555;
+	color: #555;
+	cursor: pointer;
+
+	font-size: 1.2em;
+	font-weight: bold;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+
+}
+
+#example-4 .RTU-uploadContainer .RTU-uploadItemsList:not([data-upload="0"]) + .RTU-uploadButtonHolder,
+#example-4 .RTU-gridContainer .RTU-uploadItemsList:not([data-upload="0"]) + .RTU-uploadButtonHolder {
+	height: 30px !important;
+	padding: 10px;
+}
+
+/*############## Real Time Upload: List Mode ###################################################################*/
+
+#example-4 .RTU-uploadContainer {
+	/*width: 360px;*/
+	min-height: 60px;
+	min-width: 320px;
+	display: inline-block;
+}
+
+#example-4 .RTU-uploadContainer .RTU-uploadItemsList {
+	min-width: 320px;
+	text-align: left;
+}
+
+
+#example-4 .RTU-uploadContainer .RTU-uploadItem {
+	/*min-height: 40px;*/
+	padding: 20px 20px;
+	background: rgba(255,255,255, 0.8);
+	margin: auto;
+	min-width: 320px;
+
+	font-size: 1.1em;
+	line-height: 1.2em;
+
+	/*margin-bottom: 10px;*/
+	position: relative;
+
+	height: 55px;
+	animation: unfoldGrow 0.8s normal;
+}
+#example-4 .RTU-uploadContainer .RTU-uploadItemIcon {
+	display: block;
+	height: 40px;
+	width: 40px;
+	margin-right: 20px;
+
+	height: 50px;
+	width: 50px;
+	margin-right: 10px;
+
+	float: left;
+	/*background: rgba(200,200,200, 0.1);*/
+	text-align: center;
+
+	line-height: 40px;
+	color: #999;
+	font-size: 1.5em;
+	font-weight: bold;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#example-4 .RTU-uploadContainer .RTU-uploadItemText {
+	width: 260px;
+	display: inline-block;
+	vertical-align: top;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #444;
+	font-weight: bold;
+
+	margin-bottom: 5px;
+
+	font-size: 1.1em;
+	line-height: 1.2em;
+}
+
+#example-4 .RTU-uploadContainer .RTU-uploadItemControls {
+	/*background: rgba(0,0,0,0.1);*/
+}
+
+#example-4 .RTU-uploadContainer .RTU-uploadItemSize {
+	
+	display: inline-block;
+	vertical-align: top;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #999; /*#777*/
+
+	/*margin-bottom: 5px;*/
+
+	font-size: 1.0em;
+	line-height: 20px;
+}
+
+#example-4 .RTU-uploadContainer .RTU-controlsContainer {
+	position: relative;
+	float: right;
+	display: inline-block;
+	vertical-align: top;
+	height: 20px;
+}
+
+#example-4 .RTU-uploadContainer .RTU-uploadItemPause {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	background: rgba(0,0,0,0.1) url('../images/pause.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 46%;
+	float: right;
+	cursor: pointer;
+	margin-left: 7px;
+}
+#example-4 .RTU-uploadContainer .RTU-paused {
+	background: rgba(0,0,0,0.1) url('../images/start.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 46%;
+}
+#example-4 .RTU-uploadContainer .RTU-done {
+	display: none !important;
+}
+
+#example-4 .RTU-uploadContainer .RTU-uploadItemCancel {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	float: right;
+	background: rgba(0,0,0,0.1) url('../images/cancel.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 46%;
+	cursor: pointer;
+	margin-left: 7px;
+}
+
+#example-4 .RTU-uploadContainer .RTU-uploadItemView {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	float: right;
+	background: rgba(0,0,0,0.1) url('../images/view.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 64%;
+	cursor: pointer;
+	margin-left: 7px;
+}
+
+#example-4 .RTU-uploadContainer .RTU-uploadItemBar {
+	/*width: 240px;*/
+	height: 4px;
+	display: block;
+	background: rgba(0,0,0, 0.1);
+	margin: 20px 0 10px;
+	overflow: hidden;
+	/*
+	border-radius: 4px;
+	*/
+
+	height: 4px;
+	background: #e6e6e6;
+
+	width: 100%;
+}
+
+#example-4 .RTU-uploadContainer .RTU-uploadItemBarUploaded {
+	width: 0;
+	height: 100%;
+	background: rgba(40,40,80, 0.6);
+	transition: 0.2s linear;
+	/*
+	border-radius: 4px;
+	*/
+
+	height: 100%;
+	background: #a2d39c;
+}
+#example-4 .RTU-uploadContainer .RTU-uploadItemBarFailed {
+	background: rgba(200,40,80, 0.6) !important;
+	width: 100% !important;
+}
+#example-4 .RTU-uploadContainer .RTU-uploadItemBarSucceed {
+	background: rgba(40,200,80, 0.6) !important;
+	width: 100% !important;
+}
+/*############## Real Time Upload: List Mode /end ##############################################################*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*############## Real Time Upload ###################################################################*/
+
+#example-5 .RTU-hiddenFile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+
+@keyframes unfoldGrow {
+	0% { height: 0; opacity: 0; }
+	40% { height: 55px; opacity: 0; }
+	41% { transform: scale(0.8); opacity: 1; }
+	95% { transform: scale(1.02); }
+	100% { transform: scale(1); }
+}
+
+#example-5 .RTU-uploadLabel {
+	display: inline-block;
+	vertical-align: middle;
+
+
+
+	background-color: #333;
+	background-color: #444;
+	text-align: center;
+	margin: 0 auto;
+	
+	
+	font-weight: bold;
+	font-size: 1.1em;
+
+	cursor: pointer;
+
+	height: 52px;
+	line-height: 52px;
+	border: 4px dashed #333;
+	border: 4px dashed #444;
+	transition: 0.2s linear;
+
+	/*margin-bottom: 10px;*/
+
+	font-size: 1.3em;
+
+	padding: 0 36px;
+	min-width: 280px;
+
+	white-space: nowrap;
+}
+#example-5 .RTU-uploadLabel:hover {
+	background-color: #555;
+	border: 4px dashed #555;
+}
+
+#example-5 .RTU-uploadLabelActive {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+#example-5 .RTU-uploadLabel * {
+	pointer-events: none;
+}
+
+#example-5 .RTU-droppable {
+	border: 4px dashed #555;
+	transition: 0.2s linear;
+}
+#example-5 .RTU-droppable:hover {
+	background-color: #555 !important;
+	transition: 0.2s linear;	
+}
+
+#example-5 .RTU-uploadLabelImage {
+	display: inline-block;
+	vertical-align: middle;
+	width: 24px;
+	height: 24px;
+	/*background: transparent url('../images/upload-icon.dark.png') center center no-repeat;*/
+	background: transparent url('../images/upload-icon.dark.svg') center center no-repeat;
+	background-size: 100%;
+	margin: 0 10px 0 0;
+}
+
+#example-5 .RTU-uploadLabelText {
+	display: inline-block;
+	vertical-align: middle;
+	color: #757a89;
+	color: #999;
+}
+
+
+
+#example-5 .RTU-uploadButtonHolder {
+	min-width: 340px;
+	display: block;
+	text-align: right;
+	/*padding: 10px;*/
+	padding: 0 10px;
+
+	background: #333;
+	background: #444;
+
+	height: 0;
+	line-height: 30px;
+	overflow: hidden;
+}
+
+#example-5 .RTU-uploadButton {
+	display: inline-block;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 15px;
+	background: #555;
+	background: #666;
+	color: #555;
+	color: #ddd;
+	cursor: pointer;
+
+	font-size: 1.2em;
+	font-weight: bold;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#example-5 .RTU-uploadContainer .RTU-uploadItemsList:not([data-upload="0"]) + .RTU-uploadButtonHolder,
+#example-5 .RTU-gridContainer .RTU-uploadItemsList:not([data-upload="0"]) + .RTU-uploadButtonHolder {
+	height: 30px !important;
+	padding: 10px;
+}
+
+/*############## Real Time Upload: List Mode ###################################################################*/
+
+#example-5 .RTU-uploadContainer {
+	/*width: 360px;*/
+	min-height: 60px;
+	min-width: 320px;
+	display: inline-block;
+}
+
+#example-5 .RTU-uploadContainer .RTU-uploadItemsList {
+	min-width: 320px;
+	text-align: left;
+}
+
+
+#example-5 .RTU-uploadContainer .RTU-uploadItem {
+	/*min-height: 40px;*/
+	padding: 20px 20px;
+	background: rgba(255,255,255, 0.8);
+	background: rgba(50,50,50, 1);
+	background: #222;
+	background: #333;
+	margin: auto;
+	min-width: 320px;
+
+	font-size: 1.1em;
+	line-height: 1.2em;
+
+	/*margin-bottom: 10px;*/
+	position: relative;
+
+	height: 55px;
+	animation: unfoldGrow 0.8s normal;
+}
+#example-5 .RTU-uploadContainer .RTU-uploadItemIcon {
+	display: block;
+	height: 40px;
+	width: 40px;
+	margin-right: 20px;
+
+	height: 50px;
+	width: 50px;
+	margin-right: 10px;
+
+	float: left;
+	/*background: rgba(200,200,200, 0.1);*/
+	text-align: center;
+
+	line-height: 40px;
+	color: #999;
+	font-size: 1.5em;
+	font-weight: bold;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#example-5 .RTU-uploadContainer .RTU-uploadItemText {
+	width: 260px;
+	display: inline-block;
+	vertical-align: top;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #444;
+	color: #bbb;
+	color: #b6bcbc;
+	font-weight: bold;
+
+	margin-bottom: 5px;
+
+	font-size: 1.1em;
+	line-height: 1.2em;
+}
+
+#example-5 .RTU-uploadContainer .RTU-uploadItemControls {
+	/*background: rgba(0,0,0,0.1);*/
+}
+
+#example-5 .RTU-uploadContainer .RTU-uploadItemSize {
+	
+	display: inline-block;
+	vertical-align: top;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #999; /*#777*/
+
+	/*margin-bottom: 5px;*/
+
+	font-size: 1.0em;
+	line-height: 20px;
+}
+
+#example-5 .RTU-uploadContainer .RTU-controlsContainer {
+	position: relative;
+	float: right;
+	display: inline-block;
+	vertical-align: top;
+	height: 20px;
+}
+
+#example-5 .RTU-uploadContainer .RTU-uploadItemPause {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	background: rgba(255,255,255,0.6) url('../images/pause.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 46%;
+	float: right;
+	cursor: pointer;
+	margin-left: 7px;
+}
+#example-5 .RTU-uploadContainer .RTU-paused {
+	background: rgba(255,255,255,0.6) url('../images/start.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 46%;
+}
+#example-5 .RTU-uploadContainer .RTU-done {
+	display: none !important;
+}
+
+
+
+#example-5 .RTU-uploadContainer .RTU-uploadItemCancel {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	float: right;
+	background: rgba(255,255,255,0.6) url('../images/cancel.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 46%;
+	cursor: pointer;
+	margin-left: 7px;
+}
+
+#example-5 .RTU-uploadContainer .RTU-uploadItemView {
+	display: inline-block;
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+	float: right;
+	background: rgba(255,255,255,0.6) url('../images/view.svg') center center no-repeat;
+	border-radius: 30px;
+	background-size: 64%;
+	cursor: pointer;
+	margin-left: 7px;
+}
+
+#example-5 .RTU-uploadContainer .RTU-uploadItemBar {
+	/*width: 240px;*/
+	height: 4px;
+	display: block;
+	background: rgba(0,0,0, 0.1);
+	margin: 20px 0 10px;
+	overflow: hidden;
+	/*
+	border-radius: 4px;
+	*/
+
+	height: 4px;
+	background: #444;
+
+	width: 100%;
+}
+
+#example-5 .RTU-uploadContainer .RTU-uploadItemBarUploaded {
+	width: 0;
+	height: 100%;
+	background: rgba(40,40,80, 0.6);
+	transition: 0.2s linear;
+	/*
+	border-radius: 4px;
+	*/
+
+	height: 100%;
+	background: #a2d39c;
+}
+#example-5 .RTU-uploadContainer .RTU-uploadItemBarFailed {
+	background: rgba(200,40,80, 0.6) !important;
+	width: 100% !important;
+}
+#example-5 .RTU-uploadContainer .RTU-uploadItemBarSucceed {
+	background: rgba(40,200,80, 0.6) !important;
+	width: 100% !important;
+}
+
+.pad_5 {padding: 5px;}
+
+/*############## Real Time Upload: List Mode /end ##############################################################*/
