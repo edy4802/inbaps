@@ -1088,8 +1088,15 @@ public class CbapController {
         // 설정하기 화면에서는 파라미터로 받고, 수집하기에서는 DB에서 읽어와야 한다.
         String[] arrUrlParam = urlParam.split("&");
         for(int i=0; i<arrUrlParam.length; i++){
-        	String[] arrKey = arrUrlParam[i].split("=");
-        	mapUrlParam.put(arrKey[0], arrKey[1]);
+//        	String[] arrKey = arrUrlParam[i].split("=");
+//        	mapUrlParam.put(arrKey[0], arrKey[1]);
+        	
+//        	apiKey에 =문자 포함시 위 작업에서 삭제가 되어 인증키 에러가 발생
+//        	아래 방식으로 수정 예정
+        	int idx = arrUrlParam[i].indexOf("=");
+        	String arrKey1 = arrUrlParam[i].substring(0, idx);
+        	String arrKey2 = arrUrlParam[i].substring(idx + 1);
+        	mapUrlParam.put(arrKey1, arrKey2);
         }
         
         // 이 부분을 쿼리로 바꿀것.
