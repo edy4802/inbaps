@@ -478,7 +478,6 @@ public class OpenapiController {
 	        		List<Map<String,Object>> lstOup = openapiService.selectDsApiOutputList(map);
 	        		if(outFormat.equals("XML")) {
 	        			xmlNode = cOpenApi.getXmlNode(lstOup, xmlPrefix , xmlNamespaceuri);
-		                log.debug("xmlNode : " + xmlNode);
 		                String rootOupId = "";
 		                String listOupId = "";
 		                

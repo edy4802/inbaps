@@ -167,7 +167,6 @@ public class CommonOpenApi {
         List<Map<String,Object>> itemRoot = new ArrayList<Map<String,Object>>();
         List<Map<String,Object>> itemList = new ArrayList<Map<String,Object>>();
         Map<String,Object> keyNode = new HashMap<String,Object>();
-        log.debug("content : " + getContent());
         Document xmlDocment = initialize(getContent());
         XPath xPath =  XPathFactory.newInstance().newXPath();
         
@@ -185,7 +184,7 @@ public class CommonOpenApi {
         xPath.setNamespaceContext(ctx);
         NodeList nodeList = null;
         NodeList subNodeList = null;
-        log.debug("lstOup : " + lstOup);
+        
         for(Map<String, Object> oupMap : lstOup){
         	if(oupMap.containsKey("OUP_DIV")) 
         	{
@@ -239,14 +238,10 @@ public class CommonOpenApi {
         		xmlNode.put("ROOT_OUP_ID", oupId);
         		if(oupExp != "" && xmlDocment != null)
         		{
-        			log.debug("ROOT 시작");
-        			
 	        		nodeList = (NodeList) xPath.compile(oupExp).evaluate(xmlDocment, XPathConstants.NODESET);
-	        		log.debug("nodeList : " + nodeList.item(0));
 	        		for (int i = 0; null!=nodeList && i < nodeList.getLength(); i++) {
 	        		    Map<String, Object> map = new HashMap<String,Object>();
 	        			subNodeList = nodeList.item(i).getChildNodes();
-	        			log.debug("subNodeList : " + subNodeList);
 	        			for (int j = 0;null!=subNodeList && j < subNodeList.getLength(); j++) {
 	        				Node nod = subNodeList.item(j);
 	        				if(nod.getNodeType() == Node.ELEMENT_NODE){
@@ -271,21 +266,16 @@ public class CommonOpenApi {
 	        				} 
 	        			}
 	        			itemRoot.add(map);
-	        			log.debug("itemRoot : " + itemRoot);
 	        		}
         		}
         	}else if("LIST".equals(oupDiv)){
         		xmlNode.put("LIST_OUP_ID", oupId);
         		if(oupExp != "" && xmlDocment != null)
         		{
-        			log.debug("LIST 시작");
-        			log.debug("XPathConstants.NODESET : " + XPathConstants.NODESET);
 	        		nodeList = (NodeList) xPath.compile(oupExp).evaluate(xmlDocment, XPathConstants.NODESET);
-	        		log.debug("nodeList : " + nodeList.item(0));
 	        		for (int i = 0; null!=nodeList && i < nodeList.getLength(); i++) {
 	        		    Map<String, Object> map = new HashMap<String,Object>();
 	        			subNodeList = nodeList.item(i).getChildNodes();
-	        			log.debug("subNodeList : " + subNodeList);
 	        			for (int j = 0;null!=subNodeList && j < subNodeList.getLength(); j++) {
 	        				Node nod = subNodeList.item(j);
 	        				if(nod.getNodeType() == Node.ELEMENT_NODE){
@@ -310,7 +300,6 @@ public class CommonOpenApi {
 	        				} 
 	        			}
 	        			itemList.add(map);
-	        			log.debug("itemList : " + itemList);
 	        		}
         		}
         	}
@@ -325,7 +314,6 @@ public class CommonOpenApi {
 		Document xmlDocment = null;
 		
 		if(null==xml || xml.isEmpty()){return null;}
-		log.debug("xml : " + xml);
 		InputSource is = new InputSource(new StringReader(xml));
 		if(format.equals("XML")) {
 			DocumentBuilderFactory docBuildFact = DocumentBuilderFactory.newInstance();
@@ -382,7 +370,6 @@ public class CommonOpenApi {
 			log.debug("RequestProperty(" + key + "," + (String)mapRequestParam.get(key) + ")");
 			hurlCon.setRequestProperty(key, (String)mapRequestParam.get(key));			
         }
-		
 		// 기본값은 false 이고, TRUE 이면 자동으로 POST 방식으로 설정된다.
 		if("GET".equals(method)){
 			hurlCon.setDoOutput(false);
@@ -442,7 +429,6 @@ public class CommonOpenApi {
 			log.debug("RequestProperty(" + key + "," + (String)mapRequestParam.get(key) + ")");
 			hsurlCon.setRequestProperty(key, (String)mapRequestParam.get(key));			
         }
-		
 		// 기본값은 false 이고, TRUE 이면 자동으로 POST 방식으로 설정된다.
 		if("GET".equals(method)){
 			hsurlCon.setDoOutput(false);
@@ -494,10 +480,9 @@ public class CommonOpenApi {
 		
 		String inputLine;
 		while ((inputLine = in.readLine()) != null) {
-			response.append(inputLine);
+			
 		}
 		in.close();
-		
 		setContent(response.toString());
 	}
 	
@@ -511,7 +496,6 @@ public class CommonOpenApi {
 			response.append(inputLine);
 		}
 		in.close();
-		
 		setContent(response.toString());
 	}
 	
@@ -533,9 +517,7 @@ public class CommonOpenApi {
         Map<String,Object> keyNode = new HashMap<String,Object>();
 		
 		String content = getContent();
-		log.debug("lstOup : " + lstOup);
-        result = (JSONObject) new JSONParser().parse(content.toString());
-        log.debug("result : " + result);
+        result = (JSONObject) new JSONParser().parse(content);
         
         for(Map<String, Object> oupMap : lstOup){
         	if(oupMap.containsKey("OUP_DIV")) 
@@ -560,7 +542,6 @@ public class CommonOpenApi {
         		keyNode.put(oupKey, oupType);
         	}
         }
-        log.debug("keyNode : " + keyNode);
 		
 		return jsonNode;
 	}
