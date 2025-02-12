@@ -107,14 +107,21 @@
 			<td class="tdContent">			
 				<div id="divProjectPro">
 					<h3>프로젝트</h3>
-					<div><span class="inputLabel">프로젝트ID</span><input id="txtProjId" type="text" class="text" style="width:100px;margin-left:10px;text-align: center;margin-top:2px;" disabled="disabled" spellcheck='false' ><input id="txtProjNm" type="text" class="text" style="width:300px;margin-left:5px;margin-top:2px;" disabled="disabled" spellcheck='false' ><button id="goProjPop" class="button" style="width:50px;margin-left:5px;margin-top:2px;">...</button></div>
+					<div><span class="inputLabel">프로젝트ID</span>
+					<input id="txtProjId" type="text" class="text" style="width:100px;margin-left:10px;text-align: center;margin-top:2px;" disabled="disabled" spellcheck='false' >
+					<input id="txtProjNm" type="text" class="text" style="width:250px;margin-left:5px;margin-top:2px;" disabled="disabled" spellcheck='false' >
+					<button id="goProjPop" class="button" style="width:50px;margin-left:5px;margin-top:2px;">...</button></div>
 				</div>
 			</td>
 			<td></td>
 			<td class="tdContent">
 				<div id="divJobPro">
 					<h3>작업</h3>
-					<div><span class="inputLabel">작업ID</span><input id="txtJobId" type="text" class="text" style="width:100px;margin-left:10px;text-align: center;margin-top:0px;" disabled="disabled" spellcheck='false' ><input id="txtJobNm" type="text" class="text" style="width:275px;margin-left:5px;margin-top:2px;" disabled="disabled" spellcheck='false' ><button id="goJobPop" class="button" style="width:50px;margin-left:5px;margin-top:2px;">...</button><button id="goTempJobPop" class="button" style="width:50px;margin-left:5px;margin-top:2px;">복제</button></div>
+					<div><span class="inputLabel">작업ID</span>
+					<input id="txtJobId" type="text" class="text" style="width:100px;margin-left:10px;text-align: center;margin-top:0px;" disabled="disabled" spellcheck='false' >
+					<input id="txtJobNm" type="text" class="text" style="width:250px;margin-left:5px;margin-top:2px;" disabled="disabled" spellcheck='false' >
+					<button id="goJobPop" class="button" style="width:50px;margin-left:5px;margin-top:2px;">...</button>
+					<button id="goTempJobPop" class="button" style="width:50px;margin-left:5px;margin-top:2px;">복제</button></div>
 				</div>
 			</td>
 		</tr>	
@@ -127,7 +134,7 @@
 			<td class="tdContent" style="line-height:2.8;" colspan="3">
 				<button id="goSrcNew" class="button" style="width:70px;">등록</button>
 				<button id="goSrcDel" class="button" style="width:70px;">삭제</button>
-				<button id="goSrcCopy" class="button" style="width:50px;">복제</button>
+				<button id="goSrcCopy" class="button" style="width:70px;">복제</button>
 			</td>			
 		</tr>
 		<tr>
@@ -159,6 +166,7 @@
 			<td class="tdContent" style="line-height:2.8;">
 				<input id="txtUrl" type="text" class="text" style="width:420px;" spellcheck='false' ></input><button id="goApi" class="button" style="width:50px;">검증</button><button id="goApiView" class="button" style="width:50px;">원문</button>
 				<button id="goRunApiSave" class="button" style="width:70px;">수집하기</button>
+				<button id="exportFileBtn" class="button" style="width:70px;">파일생성</button>
 			</td>
 		</tr>
 		<tr>
@@ -317,6 +325,7 @@
 		$( "#goApi" ).button();
 		$( "#goApiView" ).button();
 		$( "#goRunApiSave" ).button();
+		$( "#exportFileBtn" ).button();
 
 		$( "#divProjectPro" ).accordion();
 		$( "#divJobPro" ).accordion();
@@ -1062,6 +1071,53 @@
 			e.preventDefault();
 			//
 			fn_RunApiSave();
+		});		
+
+		$("#exportFileBtn").on("click", function(e){
+			e.preventDefault();
+			//
+			var isConfirmed = confirm("설정된 정보를 다운로드하시겠습니까?");
+			
+			if (isConfirmed) {
+				var gridDataSrc = tabSrc.jqGrid("getRowData"); // 소스 Grid
+				var gridDataInp = tabInp.jqGrid("getRowData"); // 입력항목 Grid
+				var gridDataOup = tabOup.jqGrid("getRowData"); // 출력항목 Grid
+				
+			    var jsonData = {
+			        source: gridDataSrc,
+			        input: gridDataInp,
+			        output: gridDataOup
+			    };
+	
+			    var jsonString = JSON.stringify(jsonData, null, 2);
+	
+			    var blob = new Blob([jsonString], { type: "application/json" });
+				
+			    /* 파일명 날짜 설정용도 */
+			    var today = new Date();
+			    var year = today.getFullYear();
+			    var month = String(today.getMonth() + 1).padStart(2, '0');
+			    var day = String(today.getDate()).padStart(2, '0');
+			    var date = year + month + day;
+	
+			    var fileName = date + "_KOSIS데이터.json";
+			    
+			    if (window.navigator.msSaveOrOpenBlob) {
+			        // IE 지원 (Internet Explorer에서는 msSaveBlob 사용)
+			        window.navigator.msSaveOrOpenBlob(blob, fileName);
+			    } else {
+			        // 다른 브라우저 (Chrome, Edge, Firefox 등)
+			        var url = URL.createObjectURL(blob);
+			        var a = document.createElement("a");
+			        a.href = url;
+			        a.download = fileName;
+			        a.style.display = "none"; // 화면에서 안 보이게
+			        document.body.appendChild(a);
+			        a.click();
+			        document.body.removeChild(a);
+			        URL.revokeObjectURL(url); // 메모리 정리
+			    }
+			}
 		});		
 		
 		fn_init(0);
