@@ -1463,11 +1463,35 @@ select #{USR_ID} as usr_id
 	
 	<update id="applyDsTempApiJobToInput" parameterType="hashmap">
 <![CDATA[
-insert into cbap$_api_inp
+insert into cbap$_api_inp(
+       usr_id
+     , proj_id
+     , job_id
+     , src_id
+     , inp_id
+     , inp_nm
+     , inp_key
+     , inp_val
+     , prm_type
+     , prm_dlm
+     , str_num
+     , inc_num
+     , inp_type
+     , inp_encode
+     , use_yn
+     , disp_ord
+     , rgst_id
+     , rgst_dt
+     , updt_id
+     , updt_dt
+)
 select #{USR_ID} as usr_id
      , #{PROJ_ID} as proj_id
      , #{JOB_ID} as job_id
-     , src_id, inp_id, inp_nm, inp_key
+     , src_id
+     , inp_id
+     , inp_nm
+     , inp_key
      , case when inp_type = 'REQ' then '' else inp_val end as inp_val
      , prm_type
      , prm_dlm
@@ -1491,12 +1515,35 @@ select #{USR_ID} as usr_id
 	
 	<update id="applyDsTempApiSourceToInput" parameterType="hashmap">
 <![CDATA[
-insert into cbap$_api_inp
+insert into cbap$_api_inp (
+       usr_id
+     , proj_id
+     , job_id
+     , src_id
+     , inp_id
+     , inp_nm
+     , inp_key
+     , inp_val
+     , prm_type
+     , prm_dlm
+     , str_num
+     , inc_num
+     , inp_type
+     , inp_encode
+     , use_yn
+     , disp_ord
+     , rgst_id
+     , rgst_dt
+     , updt_id
+     , updt_dt
+)
 select #{USR_ID} as usr_id
      , #{PROJ_ID} as proj_id
      , #{JOB_ID} as job_id
      , #{SRC_ID} as src_id
-     , inp_id, inp_nm, inp_key
+     , inp_id
+     , inp_nm
+     , inp_key
      , case when inp_type = 'REQ' then '' else inp_val end as inp_val
      , prm_type
      , prm_dlm
@@ -1517,7 +1564,7 @@ select #{USR_ID} as usr_id
    and src_id = #{TEMP_SRC_ID}
  order by src_id, disp_ord
 ]]>
-	</update>	
+	</update>
 	
 	<update id="applyDsTempApiJobToOutput" parameterType="hashmap">
 <![CDATA[
