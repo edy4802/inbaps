@@ -1076,7 +1076,7 @@
 		$("#exportFileBtn").on("click", function(e){
 			e.preventDefault();
 			//
-			var isConfirmed = confirm("설정된 정보를 다운로드하시겠습니까?");
+			var isConfirmed = confirm("설정한 정보를 다운로드하시겠습니까?");
 			
 			if (isConfirmed) {
 				var gridDataSrc = tabSrc.jqGrid("getRowData"); // 소스 Grid
