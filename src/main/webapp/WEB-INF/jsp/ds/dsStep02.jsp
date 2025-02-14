@@ -1079,7 +1079,10 @@
 			var isConfirmed = confirm("설정한 정보를 다운로드하시겠습니까?");
 			
 			if (isConfirmed) {
-				var gridDataSrc = tabSrc.jqGrid('getCell', _srcRowId, 'SRC_VAL'); // 소스 Grid
+				
+				var tabSrcView = $("#tabSourceView"); 
+				var selectedRowId = tabSrc.jqGrid("getGridParam", "selrow");
+				var gridDataSrc = tabSrc.jqGrid("getRowData", selectedRowId); // 선택된 소스 Grid
 				var gridDataInp = tabInp.jqGrid("getRowData"); // 입력항목 Grid
 				var gridDataOup = tabOup.jqGrid("getRowData"); // 출력항목 Grid
 				
