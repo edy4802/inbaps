@@ -4,19 +4,22 @@
 		<ul class="leftMenu">
 			<li id="m01" class="<c:choose><c:when test="${menulink eq 'openDsStep01'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">시작하기</li>
 			<li class="mline"></li>
-			<li id="m02" class="<c:choose><c:when test="${menulink eq 'openDsStep02'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">설정하기(API)</li>
+			<li id="m02" class="<c:choose><c:when test="${menulink eq 'openDsStep02'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">설정하기</li>
+			<li class="mline"></li>
+			<li id="m03" class="<c:choose><c:when test="${menulink eq 'openDsStep03'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">데이터 적재 (예정)</li>
+<%--
 			<li id="m05" class="<c:choose><c:when test="${menulink eq 'openDsStep05'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">설정하기(크롤링)</li>
-			<li class="mline"></li>
-			<li id="m03" class="<c:choose><c:when test="${menulink eq 'openDsStep03'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">수집하기(API)</li>
 			<li id="m06" class="<c:choose><c:when test="${menulink eq 'openDsStep06'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">수집하기(크롤링)</li>
-			<li class="mline"></li>
-			<%-- <li id="m04" class="<c:choose><c:when test="${menulink eq 'openDsStep04'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">점검하기(API)</li>
+			<li class="mline"></li> 
+			<li id="m04" class="<c:choose><c:when test="${menulink eq 'openDsStep04'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">점검하기(API)</li>
 			<li id="m07" class="<c:choose><c:when test="${menulink eq 'openDsStep07'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">점검하기(크롤링)</li>
-			<li class="mline"></li> --%>
+			<li class="mline"></li>
 			<li id="m09" class="<c:choose><c:when test="${menulink eq 'openDsStep09'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">배치관리</li>
 			<li id="m10" class="<c:choose><c:when test="${menulink eq 'openDsStep10'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">배치결과</li>
+
+			<li id="m08" class="<c:choose><c:when test="${menulink eq 'openDsStep08'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">예제보기</li>
+--%>
 			
-			<%-- <li id="m08" class="<c:choose><c:when test="${menulink eq 'openDsStep08'}">mclickActive</c:when><c:otherwise>mclick</c:otherwise></c:choose>">예제보기</li> --%>
 		</ul>
 	</div>
 </div>

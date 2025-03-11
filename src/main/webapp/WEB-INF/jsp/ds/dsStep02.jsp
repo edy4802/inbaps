@@ -155,6 +155,8 @@
 			<td class="tdContent" style="line-height:2.8;">
 				<button id="goOupNew" class="button" style="width:70px;">등록</button>
 				<button id="goOupDel" class="button" style="width:70px;">삭제</button>
+				<button id="exportFileBtn" class="button" style="width:70px;">파일생성</button>
+<!--
 			</td>			
 		</tr>		
 		<tr>
@@ -166,9 +168,10 @@
 			<td class="tdContent" style="line-height:2.8;">
 				<input id="txtUrl" type="text" class="text" style="width:420px;" spellcheck='false' ></input><button id="goApi" class="button" style="width:50px;">검증</button><button id="goApiView" class="button" style="width:50px;">원문</button>
 				<button id="goRunApiSave" class="button" style="width:70px;">수집하기</button>
-				<button id="exportFileBtn" class="button" style="width:70px;">파일생성</button>
-			</td>
+-->
+			</td>			
 		</tr>
+<!-- 	
 		<tr>
 			<td class="tdContent">
 				<table id="tabRunInput"></table>
@@ -178,6 +181,7 @@
 				<textarea id="txtPageSource" spellcheck='false' class="textarea"></textarea>
 			</td>
 		</tr>
+-->
 	</tbody>
 </table>
 <!-- 본문영역 (끝) -->		
@@ -322,9 +326,9 @@
 		
 		$( "#goInpList" ).button();
 		$( "#goApply" ).button();
-		$( "#goApi" ).button();
-		$( "#goApiView" ).button();
-		$( "#goRunApiSave" ).button();
+<!--	$( "#goApi" ).button();			-->
+<!--	$( "#goApiView" ).button();		-->
+<!--	$( "#goRunApiSave" ).button();	-->
 		$( "#exportFileBtn" ).button();
 
 		$( "#divProjectPro" ).accordion();
@@ -1047,6 +1051,7 @@
 			//
 			fn_GoApply();
 		});
+<!--		
 		$("#txtInputVal").keydown(function (key) {
 			 
 	        if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
@@ -1060,7 +1065,7 @@
 			//
 			fn_GoApi(0);
 		});	
-		
+	
 		$("#goApiView").on("click", function(e){ //url
 			e.preventDefault();
 			//
@@ -1072,7 +1077,7 @@
 			//
 			fn_RunApiSave();
 		});		
-
+-->
 		$("#exportFileBtn").on("click", function(e){
 			e.preventDefault();
 			//
@@ -1275,11 +1280,11 @@
         
         $("#txtSrcProDispOrd").val(dispOrd);
 
-        $("#txtInputValOrg").val('');
-        $("#txtInputVal").val('');
+<!--    $("#txtInputValOrg").val('');	-->
+<!--    $("#txtInputVal").val('');		-->
       	$("#txtUrl").val('');
         fn_selectExeItemVal(srcTypCd, srcVal, -1);
-        $("#txtPageSource").val('');
+<!--    $("#txtPageSource").val('');	-->
         $("#txtRegexResult").val('');
         
 	}	
@@ -1370,15 +1375,15 @@
 			{
 				fn_selectTempInpValList();
 			}else{
-				$("#txtInputVal").val(inpEVal);
-				$("#txtInputVal").focus();
-				$("#txtInputVal").select();
+// 				$("#txtInputVal").val(inpEVal);
+// 				$("#txtInputVal").focus();
+// 				$("#txtInputVal").select();
 			}
 		}else{
-			$("#txtInputValOrg").val(inpVal);
-			$("#txtInputVal").val(inpVal);
-			$("#txtInputVal").focus();
-			$("#txtInputVal").select();
+// 			$("#txtInputValOrg").val(inpVal);
+// 			$("#txtInputVal").val(inpVal);
+// 			$("#txtInputVal").focus();
+// 			$("#txtInputVal").select();
 		}
 	}
 	
@@ -1541,7 +1546,7 @@
 		comAjax.setUrl("<c:url value='/datasearch/selectDsTempApiInpValList.do' />");
 		comAjax.setCallback("fn_selectDsTempApiInpValListCallback");
 		comAjax.addParam("USR_ID",g_usrId);
-		comAjax.addParam("INP_COND",$("#txtInputValOrg").val());
+//		comAjax.addParam("INP_COND",$("#txtInputValOrg").val());
 		comAjax.ajax();
 	}	
 	/*** Select Template Multi InpVal Ajax Callback ***/
@@ -1559,9 +1564,9 @@
 		}
 		
 		var inpVal = $("#tabTempInpVal").jqGrid ('getCell', _tempInpValRowId, 'INP_VAL'); 
-		$("#txtInputVal").val(inpVal);
-		$("#txtInputVal").focus();
-		$("#txtInputVal").select();
+//		$("#txtInputVal").val(inpVal);
+//		$("#txtInputVal").focus();
+//		$("#txtInputVal").select();
 	}
 	
 	/*** Select Template API Job Ajax Call ***/
@@ -1629,7 +1634,7 @@
 		var tabTempInpVal = $("#tabTempInpVal");
 		var itemVal = tabTempInpVal.jqGrid ('getCell', (gfn_isNull(rowId)?_tempInpValRowId:rowId), 'INP_VAL');
 		
-		$("#txtInputVal").val(itemVal);
+//		$("#txtInputVal").val(itemVal);
 	}
 	
 	/*** Apply Template API Job Ajax Call ***/
@@ -2168,7 +2173,7 @@
 		var urlParam = "";
 		var rowId = "";
 		
-		inpVal = $("#txtInputVal").val();
+//		inpVal = $("#txtInputVal").val();
 		tabRunInp.jqGrid('setCell', _inpValRowId, 'INP_EVAL', inpVal);
 		
 	    for (var countRow = 0; countRow < gridId .length; countRow ++) 
@@ -2208,7 +2213,7 @@
     	
     	return urlParam;
 	}	
-	
+<!--	
 	// API 서비스 AJAX 호출 		
 	function fn_GoApi(flag){
 		
@@ -2240,7 +2245,7 @@
 		comAjax.addParam("USE_YN","Y");
 		comAjax.ajax();
 	}
-	
+-->	
 	function fn_runApiCallback_0(data){
 		if(data == null||data.itemRoot==null||data.itemRoot.length<=0){return;}
 		if(data == null||data.itemList==null||data.itemList.length<=0){return;}
@@ -2341,8 +2346,8 @@
 		if(step<=3){
 			$("#tabSource").jqGrid("clearGridData", true);
 			$("#tabSourceView").jqGrid("clearGridData", true);
-			$("#txtInputValOrg").val('');
-			$("#txtInputVal").val('');
+//			$("#txtInputValOrg").val('');
+//			$("#txtInputVal").val('');
 			$("#txtUrl").val('');
 		}
 		
