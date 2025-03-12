@@ -1,14 +1,32 @@
 <%@ page pageEncoding="utf-8"%>
-<div id="headerlink"><c:url value="/images/initlogo.png" var="imageUrl" /><img id="goMain" src="${imageUrl}" width="auto" height="33" />
-<label id="goSubMain" class="goSubMain"><c:if test="${not empty sessionScope.userLoginInfo.cbapTit}">${sessionScope.userLoginInfo.cbapTit}</c:if><c:if test="${empty sessionScope.userLoginInfo.cbapTit}">C-BAP (Collection for BAP)</c:if></label>
-<c:if test="${not empty sessionScope.userLoginInfo.userId}">
-<table class="gomain"><tr>
-<td>
-${sessionScope.userLoginInfo.userNm}&nbsp;님 반갑습니다.
-</td><td id="goLogout">로그아웃</span></td>
-</tr></table>
-</c:if>
+
+<style>
+	#goLogout:hover {
+		color: orange;
+	}
+</style>
+
+<div id="headerlink">
+	<c:url value="/images/initlogo.png" var="imageUrl" /><img id="goMain" src="${imageUrl}" width="auto" height="33" />
+	<label id="goSubMain" class="goSubMain">
+		<c:if test="${not empty sessionScope.userLoginInfo.cbapTit}">${sessionScope.userLoginInfo.cbapTit}</c:if>
+		<c:if test="${empty sessionScope.userLoginInfo.cbapTit}">C-BAP (Collection for BAP)</c:if>
+	</label>
+	
+	<c:if test="${not empty sessionScope.userLoginInfo.userId}">	<!-- 로그인 세션이 있을 경우 -->
+	<table class="gomain">
+		<tr>
+			<td>
+				${sessionScope.userLoginInfo.userNm}&nbsp;님 반갑습니다.
+			</td>
+			<td id="goLogout" style="cursor: pointer;">
+				&nbsp;&nbsp;(로그아웃)
+			</td>
+		</tr>
+	</table>
+	</c:if>
 </div>
+
 <script type="text/javascript">
     $(document).ready(function(){
         $("#goMain").on("click", function(e){
