@@ -1,5 +1,5 @@
 <%@ page pageEncoding="utf-8"%>
-<div id="headerlink"><img id="goMain" src="<c:if test="${not empty sessionScope.userLoginInfo.cbapLogoUrl}">${sessionScope.userLoginInfo.cbapLogoUrl}</c:if><c:if test="${empty sessionScope.userLoginInfo.cbapLogoUrl}"><c:url value='/images/toplogo1.png' /></c:if>" width="auto" height="33" />
+<div id="headerlink"><c:url value="/images/initlogo.png" var="imageUrl" /><img id="goMain" src="${imageUrl}" width="auto" height="33" />
 <label id="goSubMain" class="goSubMain"><c:if test="${not empty sessionScope.userLoginInfo.cbapTit}">${sessionScope.userLoginInfo.cbapTit}</c:if><c:if test="${empty sessionScope.userLoginInfo.cbapTit}">C-BAP (Collection for BAP)</c:if></label>
 <c:if test="${not empty sessionScope.userLoginInfo.userId}">
 <table class="gomain"><tr>
