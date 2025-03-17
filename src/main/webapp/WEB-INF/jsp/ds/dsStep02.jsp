@@ -141,47 +141,18 @@
 			<td class="tdContent">
 				<table id="tabInput"></table>
 			</td>
-			<td></td>
-			<td class="tdContent">
-				<table id="tabOutput"></table>
-			</td>			
+<!-- 			<td></td> -->
+<!-- 			<td class="tdContent"> -->
+<!-- 				<table id="tabOutput"></table> -->
+<!-- 			</td>			 -->
 		</tr>
 		<tr>
 			<td class="tdContent" style="line-height:2.8;">
 				<button id="goInpNew" class="button" style="width:70px;">등록</button>
 				<button id="goInpDel" class="button" style="width:70px;">삭제</button>
-			</td>
-			<td></td>
-			<td class="tdContent" style="line-height:2.8;">
-				<button id="goOupNew" class="button" style="width:70px;">등록</button>
-				<button id="goOupDel" class="button" style="width:70px;">삭제</button>
 				<button id="exportFileBtn" class="button" style="width:70px;">파일생성</button>
-<!--
-			</td>			
-		</tr>		
-		<tr>
-			<td class="tdContent" style="line-height:2.8;">
-				<input id="txtInputValOrg" type="text" class="text" style="width:545px;" spellcheck='false' ></input><button id="goInpList" class="button" style="width:50px;">목록</button>
-				<input id="txtInputVal" type="text" class="text" style="width:545px;" spellcheck='false' ></input><button id="goApply" class="button" style="width:50px;">적용</button>
-			</td>
-			<td></td>
-			<td class="tdContent" style="line-height:2.8;">
-				<input id="txtUrl" type="text" class="text" style="width:420px;" spellcheck='false' ></input><button id="goApi" class="button" style="width:50px;">검증</button><button id="goApiView" class="button" style="width:50px;">원문</button>
-				<button id="goRunApiSave" class="button" style="width:70px;">수집하기</button>
--->
-			</td>			
-		</tr>
-<!-- 	
-		<tr>
-			<td class="tdContent">
-				<table id="tabRunInput"></table>
-			</td>
-			<td></td>
-			<td class="tdContent">
-				<textarea id="txtPageSource" spellcheck='false' class="textarea"></textarea>
 			</td>
 		</tr>
--->
 	</tbody>
 </table>
 <!-- 본문영역 (끝) -->		
@@ -1089,12 +1060,12 @@
 				var selectedRowId = tabSrc.jqGrid("getGridParam", "selrow");
 				var gridDataSrc = tabSrc.jqGrid("getRowData", selectedRowId); // 선택된 소스 Grid
 				var gridDataInp = tabInp.jqGrid("getRowData"); // 입력항목 Grid
-				var gridDataOup = tabOup.jqGrid("getRowData"); // 출력항목 Grid
+				//var gridDataOup = tabOup.jqGrid("getRowData"); // 출력항목 Grid
 				
 			    var jsonData = {
 			        source: gridDataSrc,
 			        input: gridDataInp,
-			        output: gridDataOup
+			        //output: gridDataOup
 			    };
 	
 			    var jsonString = JSON.stringify(jsonData, null, 2);
@@ -1102,13 +1073,13 @@
 			    var blob = new Blob([jsonString], { type: "application/json" });
 				
 			    /* 파일명 날짜 설정용도 */
-			    var today = new Date();
-			    var year = today.getFullYear();
-			    var month = String(today.getMonth() + 1).padStart(2, '0');
-			    var day = String(today.getDate()).padStart(2, '0');
-			    var date = year + month + day;
+// 			    var today = new Date();
+// 			    var year = today.getFullYear();
+// 			    var month = String(today.getMonth() + 1).padStart(2, '0');
+// 			    var day = String(today.getDate()).padStart(2, '0');
+// 			    var date = year + month + day;
 	
-			    var fileName = date + "_KOSIS데이터.json";
+			    var fileName = gridDataSrc.SRC_NM + "_KOSIS데이터.json";
 			    
 			    if (window.navigator.msSaveOrOpenBlob) {
 			        // IE 지원 (Internet Explorer에서는 msSaveBlob 사용)
