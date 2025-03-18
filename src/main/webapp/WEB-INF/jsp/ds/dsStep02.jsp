@@ -1058,27 +1058,34 @@
 				
 				var tabSrcView = $("#tabSourceView"); 
 				var selectedRowId = tabSrc.jqGrid("getGridParam", "selrow");
+				var projKey = $("#txtProjId").val(); 	// 프로젝트 ID 키 값
+				var jobKey = $("#txtJobId").val();		// 작업 ID 키 값
 				var gridDataSrc = tabSrc.jqGrid("getRowData", selectedRowId); // 선택된 소스 Grid
 				var gridDataInp = tabInp.jqGrid("getRowData"); // 입력항목 Grid
-				//var gridDataOup = tabOup.jqGrid("getRowData"); // 출력항목 Grid
 				
 			    var jsonData = {
-			        source: gridDataSrc,
+	    		 	__metadata__: {
+	    		        description: "해당 파일은 inBAPS Daemon Thread 에 사용될 API 설정 파일입니다.",
+	    		        project: {
+	    		            projectId: 	"프로젝트ID : " + projKey,
+	    		            jobId: 		"작업ID : " + jobKey,
+	    		            sourceId: 	"소스ID : " + gridDataSrc.SRC_ID,
+	    		            sourceNm: 	"소스명 : " + gridDataSrc.SRC_NM,
+	    		            sourceUrl: 	"소스URL : " + gridDataSrc.SRC_VAL	    		            
+	    		        },
+	    		        instructions: {
+	    		            purpose: "이 파일은 inBAPS 파일 생성을 통하여 작성되었습니다.",
+	    		            redefine: "세부 사항의 수정이 필요하신 경우, 상기 inBAPS 경로를 통하여 수정 후 다시 다운로드 부탁드립니다."
+	    		        }
+	    		    },
+					source: gridDataSrc,
 			        input: gridDataInp,
-			        //output: gridDataOup
 			    };
 	
 			    var jsonString = JSON.stringify(jsonData, null, 2);
 	
 			    var blob = new Blob([jsonString], { type: "application/json" });
 				
-			    /* 파일명 날짜 설정용도 */
-// 			    var today = new Date();
-// 			    var year = today.getFullYear();
-// 			    var month = String(today.getMonth() + 1).padStart(2, '0');
-// 			    var day = String(today.getDate()).padStart(2, '0');
-// 			    var date = year + month + day;
-	
 			    var fileName = gridDataSrc.SRC_NM + "_KOSIS데이터.json";
 			    
 			    if (window.navigator.msSaveOrOpenBlob) {
