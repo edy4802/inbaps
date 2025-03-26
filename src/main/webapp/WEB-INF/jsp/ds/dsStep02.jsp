@@ -138,7 +138,7 @@
 			</td>			
 		</tr>
 		<tr>
-			<td class="tdContent">
+			<td class="tdContent" colspan="3">
 				<table id="tabInput"></table>
 			</td>
 <!-- 			<td></td> -->
@@ -732,7 +732,7 @@
 		   	],
 		   	//rowNum:rowNum,
 			width:1230,
-			height:100,//"100%",
+			height:260,//"100%",
 			hidegrid : false,
 		   	viewrecords: true,
 		   	multiselect: false,
@@ -786,7 +786,7 @@
 		   		{name:'DISP_ORD',index:'DISP_ORD', hidden: true}
 		   	],
 		   	//rowNum:rowNum,
-			width:600,
+			width:1230,
 			height:156,//"100%",
 			hidegrid : false,
 		   	viewrecords: true,
